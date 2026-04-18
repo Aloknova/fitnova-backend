@@ -48,7 +48,7 @@ app.get("/health", (req, res) => {
 });
 
 // AI Chat Route
-app.post("/api/ai/chat", async (req, res) => {
+app.post("/ai/chat", async (req, res) => {
   const parsed = chatSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ error: 'Invalid request', details: parsed.error.flatten() });
@@ -100,7 +100,7 @@ app.post("/api/ai/chat", async (req, res) => {
 });
 
 // Diet Plan Route
-app.post("/api/ai/diet-plan", async (req, res) => {
+app.post("/ai/diet-plan", async (req, res) => {
   const parsed = dietSchema.safeParse(req.body);
   if (!parsed.success) {
     return res.status(400).json({ error: 'Invalid payload', details: parsed.error.flatten() });
